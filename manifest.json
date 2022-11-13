@@ -1,0 +1,15 @@
+{
+  "name": "rFMSConnect my FleetManagement system",
+  "short_name": "rFMSConnect",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#f5f6f5",
+  "theme_color": "#326c58",
+  "scope": "./",
+  "icons": [
+    {
+      "src": "/images/favicon_light.png",
+      "type": "image/png", "sizes": "300x300"
+    }
+  ]
+}
