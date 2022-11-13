@@ -1,0 +1,754 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow');
+:root{
+	--breakpoint-xs: 0;
+	--breakpoint-sm: 576px;
+	--breakpoint-md: 768px;
+	--breakpoint-lg: 992px;
+	--breakpoint-xl: 1600px;
+	--line-height:52px;
+	--popup-background: #FFF;
+/*--font-family-sans-serif: "Barlow",-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;*/
+}
+
+body					{overflow-x:hidden;overflow-y:hidden;   }
+
+.border-title
+.left 					{float: left; width:310px;height: 99%;background-color:#fff; padding: 5px;overflow-y: noscroll}
+.pad					{float: left; width:100%; position:relative;border: 0px solid #3C8BDC	}
+.demopad				{float: left; width:100%; height: calc(100vh - 50px);position:relative;border: 0px solid #3C8BDC	}
+.IndexPad 	 			{float: left; width:100%; height: calc(100vh - 240px);position:relative;border: 0px solid #3C8BDC	}
+.dpad 	 				{float: left; width:100%; height: 370px;position:relative;border: 0px solid #3C8BDC;max-height:230px;	}
+.adminpad 				{width:100%; min-height:calc(100vh - 176px)}
+.dlpad 	 				{float: left; width:100%; height: calc(70vh - 125px);position:relative;border: 0px solid #3C8BDC	}
+.dgpad 	 				{float: left; width:100%; height: calc(30vh);position:relative;}
+#GraphDelayedVehicles 	{width:100%; }
+.reportpad 	 			{float: left; width:100%; height: calc(100vh - 300px); position:relative;border: 0px solid lightgray;	}
+.alertpad 	 			{float: left; width:100%; height: calc(100vh - 190px);position:relative;border: 0px solid lightgray;min-height:700px;	}
+.CVPpad 	 			{float: left; width:100%; height: calc(100vh - 300px);min-height: 500px;position:relative;border: 0px solid lightgray;	}
+.advisepad 	 			{float: left; width:100%; height: calc(40vh);position:relative;border: 0px solid lightgray;	}
+#map 	 				{float: left; width:100%; height: 100%;border: 0px solid lightgray;	z-index:5;border-radius:.5rem ;}
+#demo					{position:absolute; top:5px; right:5px; background-color:rgba(255,255,255,0.4); width:200px; height:600px; z-index: 100;}
+#FleetTripTable			{min-height:80px}
+#ShowDetails 			{overflow-y: hidden;}
+#TripDetailsTimeline	{height:350px;}
+#TripsCol				{;}
+#VehicleDetails			{height: calc(100vh - 170px);min-width: 400px;z-index: 4;/* overflow-y: auto; *//* overflow-x: hidden; */	border-top-right-radius: 1rem;	border-bottom-right-radius: 1rem;	border-right: 1px solid #ddd;margin-left: -20px;background-color: var(--body);}
+.VehicleList 			{height: calc(100vh - 235px);z-index: 2;overflow-y:auto;overflow-x:hidden;}
+.VehicleFilter			{height: 50px;}
+.vehicleDetailsCard 	{overflow-y: auto;overflow-x: hidden;}
+main 					{margin-top: 90px;}
+.dt-right				{text-align:right;}
+.dt-left				{text-align:left;}
+.dt-center				{text-align:center;}
+.modal-rfms				{width:700px;max-width: 100%;}
+.modal-body 				{padding: 1rem;}
+.modal-content.card		{width: 800px;}
+section 					{display: block; overflow-y: auto; overflow-x: hidden;}
+#VehicleInfoD			{line-height:16px;overflow-y:auto;overflow-x:hidden;padding:0px;}
+.footer 					{bottom: 0;height: 50px;line-height: 50px;overflow-y:hidden;    margin: 15px;border-radius: .5rem;}
+.footerMobile 			{bottom: 0;width: 100%;height: 70px;line-height: 34px;overflow-y:hidden;}
+#DriveTimeGraph			{min-height: 250px;line-height:16px;overflow-y:auto;overflow-x:hidden;padding:10px;}
+#TermsAndConditionsText {height: calc(70vh);line-height:16px;overflow-y:auto;overflow-x:hidden;padding:10px;}
+#VehicleInfoTrip		{height: calc(100vh - 420px);	min-height:500px;	line-height:16px;	overflow-y:hidden;	overflow-x:hidden;	position: relative;    display: flex;    flex-direction: column;    min-width: 0;    word-wrap: break-word;    background-clip: border-box;    border-radius: .05rem;}
+#TripInfo 				{max-height: calc(100vh - 470px);  overflow-y: auto;}
+
+a:hover 					{text-decoration: none;}
+.VehicleDetailsTable !important
+						{height: calc(80vh - 175px);line-height:14px;overflow-y: auto;overflow-x: hidden;min-height: 200px;/* 	padding:10px; */}
+img.rounded				{max-width:100px!important;	max-height:100px!important;}
+#VMList					{height: calc(100vh - 250px);	line-height:14px;	overflow-y: auto;	overflow-x: hidden;	min-height: 200px;	padding:10px;}	 		
+#VehicleAlertDetails, 
+#VehicleAlert 			{height: calc(100vh - 450px);	line-height:12px;	overflow-y: auto;	overflow-x: hidden;	min-height: 400px;	padding:10px;}
+.AlertMap 				{height: calc(30vh);	line-height:12px;	overflow-y: hidden;	overflow-x: hidden;	min-height: 200px;	padding:10px;	width:100%;}
+.VTMap 					{height: calc(30vh);	line-height:12px;	overflow-y: hidden;	overflow-x: hidden;	min-height: 200px;	padding:10px;	font-size:13px;}
+#AdviseData, 
+#AlertHistory 			{max-height: calc(100vh - 290px);	min-height: 600px;	line-height:12px;	overflow-y: auto;	overflow-x: hidden;	padding:10px;	font-size:13px;}
+#VehicleAlertTable 		{overflow-y: hidden;}
+#popup					{width:130%;}
+#popup td				{padding-right:5px;}
+#UpdateMap 				{font-weight:700;	float:right;display:block; border-radius: 5px; width:160px;	height: 24px; padding: 0px 12px;}
+#info 					{font-size:14px;}
+.tooltip 				{position: relative;display: inline-block;opacity:1;}
+.tooltip .tooltiptext 	{visibility: hidden; width: 200px;background-color: #fff;box-shadow: 1px 1px 4px #444;color: inherit;text-align: left;position: absolute; z-index: 1;
+						 font-size:95%;top:20px;  margin-left: -100px;padding:10px}
+.tooltip:hover .tooltiptext 
+						{visibility: visible;}
+.payoff					{color:var(--light);text-transform: uppercase;font-weight: 500;}
+.text-muted 			{text-transform: uppercase;border-bottom: 1px solid #ddd;}
+.info-box-content 		{padding: 10px 10px;    margin-left: 60px;}
+.VehicleList , 
+.VehicleList:link, 
+.VehicleList:visited	{line-height:18px;	width:100%;	color: black;	overflow-y: scroll;	text-decoration:none;}
+.VehicleListDInfo		{font-size:75%;	color:#666;	font-weight: 400;}
+.TripList , 
+.TripList:link, 
+.TripList:visited,
+.TripList:hover 		{font-size:14px;	line-height:36px;	width:100%;	overflow-y: scroll;	text-decoration:none;}
+.TripHeader  			{font-size:18px;	line-height:36px;	width:100%;	overflow-y: scroll;	text-decoration:none;}
+.TripDHeader  			{font-size:14px;	line-height:18px;	width:100%;	overflow-y: scroll;	text-decoration:none;}
+.DealerInfo 			{line-height:20px;	padding-right: 5px;	padding-bottom:3px;}
+.MarkerInfo 			{font-size: 90%;line-height: 26px;	}
+.tiny 					{font-size:75%;}
+.media					{padding:0 16px;margin:12px 0;overflow:hidden;margin-top:0;}
+.media-item				{padding-top:.5rem;}
+.img-thumbnail 			{padding: 0rem; background-color: transparent;  border: 0px solid #dee2e6;border: 1px solid #ddd;border-radius: 50%; max-width: 45px; height:45px;}
+.smallcircle			{border:2px solid transparent;border-radius: 50%;padding:-2px;}
+.smallcircle:hover		{border:2px solid var(--primary);}
+.img_usercard			{background-color:transparent; border-radius:50%;height:80px;}
+
+.MapInfo				{font-size:16px;	width:100%;	color: #222;}
+.MapInfo tr				{border-bottom: 1px dotted #eee;	line-height:16px;	font-size:12px;	width:100%;	word-wrap: break-word;	display:inline-block;}
+.MapInfoTD1 			{line-height:22px;	font-size:12px;	width:130px;}.MapInfoTD2 {	line-height:22px;	font-size:12px;	text-overflow:ellipsis;}
+.mapleftcolumn 			{margin-left: 0px; padding-left: 0px;}
+.maprightcolumn 		{margin-right: 0px; padding-right: 0px;}
+.VehicleListIconDelayed {width:30px;	padding-right:10px;}
+.VehicleListIconError 	{width:30px;	padding-right:10px;}
+.VehicleListBacklog 		{width:30px;	padding-right:10px;}
+.VehicleListIconStopped {width:30px;	padding-right:10px;}
+.VehicleListIconOk,
+.VehicleListIconOk:hover 
+						{width:30px;	padding-right:10px;	text-decoration:none;}
+.MI_HeaderIcon 			{float:left;	padding-right: 10px;	width:40px;}
+.MI_HeaderText 			{float:left;	padding-top: 15px;	vertical-align:bottom;	font-size:16px;}
+.MI_Header 				{border-bottom: 1px solid #999;	width:100%;	float:left;}
+.VI_TL, .VI_TL:hover 	{color:black;	cursor:pointer;	width:30px;	text-decoration:none;	font-weight:bold;}
+.Underbar 				{display:block;	vertical-align:bottom;}
+
+#text 					{color : #000;}
+select 					{height: 36px;   padding: 0px 6px;border-radius: 0px;  }
+.ToolTip_DL 			{line-height:24px;	color: #444;	font-size:100%;	padding-right: 5px;}
+.tooltipicon 			{width:30px;text-align: center}
+#TestDR 				{width:400px;	margin:50px;}
+#driverlist				{width:400px;	margin:50px;	height:200px;}
+#sticker				{margin: 40px;    height: 100px;    background-color: #eee;    position: relative;    overflow: hidden;	padding:10px;}
+#sticker div 			{position: absolute;    width: 20px;    height: 20px;    border-radius: 100%;    background-color: #FFF;}
+.notification-area 		{display: table-cell; vertical-align: top;	overflow-y: auto;	overflow-x: hidden;	}
+#outPopUp 				{position: absolute;  width: 90%;  max-width:500px;  z-index: 15;  top: 5%;  left: 5%;  margin: 0px 0 0  0px;  background: #efefef;  opacity:0.9;  border-radius : 3px;  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .05);  float:left;}
+.form-signin-heading	{padding : 10px;  text-align:center;  font-weight:bold;}
+
+#tableVehicles			{overflow-y: hidden; }
+.tab-content			{position: relative;	display: block;	padding:0;/* 	border-bottom: 1px solid #e0e0e0; */}
+.normalFont				{font-size:100%;}
+.rFMSGraph				{height: 200px;padding:0px;margin:0px;text-align:center;vertical-align:center;}
+.MonitorGraph			{height: 80px; text-align:center;vertical-align:center;}
+.rFMSTripGraph			{height: 200px; padding:0px;margin:0px;text-align:center;vertical-align:center;}
+.rFMSDriverGraph		{height: 90px; 	padding:0px;margin-top:-25px;text-align:center;vertical-align:center;min-width:370px}
+.rFMSTripGraph2			{min-height: 250px; max-height: 500px; padding:0px;margin:0px;text-align:center;vertical-align:center;}
+.FleetGraph				{height:250px;padding:0px;margin:0px;text-align:center;vertical-align:center;}
+.rFMSStats				{min-height: 100px; width: 100%;padding:5px;text-align:center;}
+.rFMSTitle				{height:40px;width: 100%;padding:5px;text-align:center;font-size:200%;font-weight:bold;}
+.AlertLine				{padding : 10px 15px 20px 10px;	border-bottom: 1px solid #eee;}
+.AdviseHeader			{padding : 10px 10px 10px 5px;	border-bottom: 1px solid #666;	font-size:150%;	width: 100%;    display: table;	}
+.AdviseBox				{/* height:300px; */	margin-right:3px;	margin-left:3px;}
+.AdviseText				{padding:5px;	line-height:14px;	overflow-y:auto;	overflow-x:hidden;	min-height: 10px;}
+.StatusLineHeader		{margin : 0 0 10px 0;	border-bottom: 1px solid #DDD;	width:100%;	padding-top: 10px;}
+.StatusValue 			{font-weight: 400;}
+.StatusValueFake 		{font-weight: bold;	color:#999;	font-style: italic;}
+.StatusMessage 			{padding-top:20px;}
+.wrapper				{width:100%;}
+.fixed-top 				{top: 15px;right: 15px; left: 15px;}
+.pagina					{padding:30px;margin: 0px 0px 0px 0px;overflow-y: hidden; overflow-x:hidden;   }
+.pagina-mobile			{background-color:transparent;border-radius:0px; box-shadow:0px 0px 0px #ddd; margin:0px;  height: calc(100vh - 200px);overflow-y:auto;overflow-x:hidden}
+.inner-pagina 			{overflow-y: auto;overflow-x: hidden;margin-right: 0px;margin-left: 0px;height:calc(100vh - 176px)}
+.pdc-pagina				{overflow-y:auto;overflow-x: hidden;}
+.pdc-card-pagina		{overflow-y: auto;overflow-x: hidden;margin-right: 15px;margin-left: 15px;height:calc(100vh - 176px)}
+.pdc-check-pagina		{overflow-y: auto;overflow-x: hidden;margin-right: 0px;margin-left: 0px;max-height:calc(100vh - 305px)}
+.inner-report 			{overflow-y: auto;overflow-x: hidden;margin-right: -15px;margin-left: -15px;height: calc(100vh - 400px);}*/
+
+#TripGraph				{display: block; width: 1630px; height: 255px;}
+#TripTable 				{min-height:50px;overflow-y: hidden;}
+.leaflet-div-icon		{background:red;  border:5px solid rgba(255,255,255,0.5);  color:blue;  font-weight:bold;  text-align:center;  border-radius:50%;  line-height:30px;}
+#alertData				{text-align: left;}
+.VehicleListInfo 		{font-weight: 400;}
+.VehicleListName 		{font-weight: 700;}
+ .masthead-content 		{/* height: calc(100vh - 38px); */}
+.admincard				{background-color:rgba(255,255,255,0.5);margin-bottom:30px;}
+.admincard-body			{overflow-y:auto;max-height:calc(50vh);overflow-x:hidden;}
+.small					{font-size:85%}
+.large					{font-size:160%;}
+.collapsing 				{transition: none !important;}
+.aboutlogo 				{width:100px;}
+.VehicleDetailsIconArea {width:4rem;}
+.border-title 			{position: absolute;z-index: 15; margin-top: -25px; margin-left: 0rem;  padding: .125rem;}
+.border-subtitle 		{position: absolute;z-index: 15;margin-top: -1.5rem;margin-left: 2rem;	padding: .5rem;}
+.card-header			{font-weight:700;}
+.card-title 			{font-weight:700;}
+.rotate-icon			{-webkit-transform: rotate(180deg); transform: rotate(180deg);}
+.ck.ck-editor__main>.ck-editor__editable
+						{background: transparent;border-radius: 0;}
+.select_old 				{color:#aaa;	font-weight:400;	/* font-style: italic; */}
+.searchResetBtn			{margin-left:-20px;}
+.SearchFilter 			{width:100%;line-height: 1.5rem}
+.SearchIcon				{width:36px;vertical-align:middle;}
+/*sidebar settings map.php*/
+#VehicleSearch 			{height:320px;}
+
+/*  messages */
+
+.chat-main-box 				{position: relative;    overflow: hidden;}
+.chat-main-box .chat-left-aside
+							{position: relative;float: left;z-index: 9;padding: 0px; top: 0px; height:100%;   border-right: 1px solid rgba(120, 130, 140, 0.13);}
+.chat-main-box .chat-left-aside .open-panel
+							{display: none;    cursor: pointer;    position: absolute;    left: -webkit-calc(100% - 1px);    top: 50%;    z-index: 100;    background-color: #fff;    -webkit-box-shadow: 1px 0 3px rgba(0, 0, 0, 0.2);    box-shadow: 1px 0 3px rgba(0, 0, 0, 0.2);    border-radius: 0 100px 100px 0;    line-height: 1;    padding: 15px 8px 15px 4px;}
+.chat-main-box .chat-left-aside .chat-left-inner
+							{position: relative;}
+.chat-main-box .chat-left-aside .chat-left-inner .style-none
+							{padding: 0px;height: calc(100vh - 290px);overflow-y: auto}
+.chat-main-box .chat-right-aside
+							{float: left;padding:0px}
+.chat-list 					{margin: 0px;    padding: 0px;}
+.slimScrollDiv				{height:100%}
+.chat-main-box .chat-left-aside .chat-left-inner .style-none li a
+							{padding: 10px 20px 10px 20px;}
+.chatonline img 			{margin-right: 10px;    float: left;    width: 45px;}
+.img-circle 				{border-radius: 100%;}
+img 						{vertical-align: middle;    border-style: none;}
+.chat-rbox 					{height: calc(100vh - 300px);}
+.chat-main-box .chat-left-aside .chat-left-inner .style-none li
+							{list-style: none;    overflow: hidden;    border-bottom: 1px solid #ddd;}
+.chatonline li a 			{padding: 13px 0;    float: left;    width: 100%;}
+.chatonline li a span 		{color: #67757c;}
+.chatonline li a span small {display: block;   }
+.form-material .form-control
+							{background-position: center bottom, center calc(100% - 1px);    background-repeat: no-repeat;    background-size: 0 2px, 100% 1px;    padding: 0;    -webkit-transition: background 0s ease-out 0s;    -o-transition: background 0s ease-out 0s;    transition: background 0s ease-out 0s;}
+.chat-main-box .chat-left-aside .chat-left-inner .form-control
+							{height: 60px;    padding: 15px;    background-image: -webkit-gradient(linear, left top, left bottom, from(#1e88e5), to(#1e88e5)), -webkit-gradient(linear, left top, left bottom, from(rgba(120, 130, 140, 0.13)), to(rgba(120, 130, 140, 0.13)));    background-image: -webkit-linear-gradient(#1e88e5, #1e88e5), -webkit-linear-gradient(rgba(120, 130, 140, 0.13), rgba(120, 130, 140, 0.13));    background-image: -o-linear-gradient(#1e88e5, #1e88e5), -o-linear-gradient(rgba(120, 130, 140, 0.13), rgba(120, 130, 140, 0.13));    background-image: linear-gradient(#1e88e5, #1e88e5), linear-gradient(rgba(120, 130, 140, 0.13), rgba(120, 130, 140, 0.13));}
+.chat-main-box .chat-right-aside .chat-list
+							{max-height: none;    height: 100%; padding: 10px 10px 0 10px;overflow-y: auto}
+.chat-list li 				{list-style: none;    margin-top: 0px;}
+.chat-list li .chat-img		{display: inline-block;    width: 45px;    vertical-align: top;}
+.chat-list li .chat-content {width: calc(100% - 100px); display: inline-block;    padding-left: 15px;}
+.chat-list li .chat-time 	{display: inline-block;    text-align: right;    width: 80px;    color: #99abb4;}
+.chat-list li .chat-content h5
+							{color: #99abb4;}
+.chat-list li .chat-content .box
+							{display: inline-block;    margin-top: 5px;    color: #263238;}
+.chatpad 					{height: calc(100vh - 190px);border-radius: .35rem;}
+.chat-header				{height:60px;}
+.chat-header-search			{height:50px;padding:.5rem .5rem}
+.chat-badge					{border:0; border-radius:.5rem;padding: .375rem .5rem;width:100%}
+.box 						{border-radius: 4px;    padding: 10px;}
+.chat-list li.reverse 		{text-align: right;}
+.btn:focus, btn:active,
+.btn:not(:disabled):not(.disabled):active:focus
+							{box-shadow: 0 0 0;}
+.btn-circle 				{border-radius: 100%;    width: 40px;    height: 40px;    padding: 10px;}
+.btn-circle.btn-lg 			{width: 50px;    height: 50px;    padding: 14px 15px;}
+.chat-list li .chat-img img {width: 45px;    border-radius: 100%;}
+.notify .heartbit			{position: absolute;    top: -20px;    right: -4px;    height: 25px;    width: 25px;    z-index: 10;    border: 5px solid #fc4b6c;    border-radius: 70px;    -moz-animation: heartbit 1s ease-out;    -moz-animation-iteration-count: infinite;    -o-animation: heartbit 1s ease-out;    -o-animation-iteration-count: infinite;    -webkit-animation: heartbit 1s ease-out;    -webkit-animation-iteration-count: infinite;    animation-iteration-count: infinite;}
+
+
+/* Spinner settings */
+.loader 					{left: 50%; margin-left: -4em; font-size: 10px; animation: spin 1.1s infinite linear;}
+.sloader 					{left: 50%; margin-left: -2em; font-size: 10px; animation: spin 1.1s infinite linear;}
+.bloader 					{left: 50%; margin-left: -8em; font-size: 10px; animation: spin 1.1s infinite linear;}
+.loader, .loader:after 		{border-radius: 50%;    width: 3em;    height: 3em;    display: block;    position: relative;    top: 0.5em;    margin-top: .05em;}
+.sloader, .sloader:after	{border-radius: 50%;    width: 2em;    height: 2em;    display: block;    position: relative;    margin-top: .05em}
+.bloader, .bloader:after	{border-radius: 50%;    width: 8em;    height: 8em;    display: block;    position: relative;    top: 4em;    margin-top: 1.05em;}
+
+@keyframes spin {  0% {    transform: rotate(-360deg);  }
+  100% {    transform: rotate(0deg);  }
+}
+.containerDemo	 			{width: 100%;padding-right: 15px;padding-left: 15px;margin-right: auto;margin-left: auto;}
+nav.navbar					{height: 60px;border-radius:.5rem;}
+/* Form variables *******************************/
+.form-control-ro			{font-weight: 700;}
+.form-control:focus 		{box-shadow: none;}
+.input-group-addon 			{position: relative;left: -22px;top: 5px;}
+.form-control-ro			{display: block; padding:.375rem .375rem; height:var(--line-height);}
+.progressTC 				{width: 100%; height: 16px;}
+
+/* Sidebar Clickable */
+.sidebar 					{height: calc(100vh - 120px);width: 0; position: fixed;z-index: 2000; top: 60px; left: 10px; overflow-x: hidden; overflow-y: auto; transition: 0.5s; box-shadow: 2px 2px 15px #888;}
+.sidebar a 					{padding: 0px ;display: block; transition: 0.3s;}
+.close		 				{position: absolute;top: 20px;right: 40px; margin-left: 50px;padding:5px; font-weight: 900;}
+.openbtn 					{cursor: pointer;;border: none;}
+.openbtn:hover 				{background-color: transparent;}
+#main 						{transition: margin-right .5s;}
+#Not_Sidebar				{/*min-height:20px; margin-top:0px; padding-right:50px */}
+#TripDetailsGraph			{max-height:200px;}
+
+/* VehicleDetails Sidebar Clickable */
+.VDsidebar 					{width: 0; position: absolute; z-index: 500;top: 0px;right: 0;  overflow-x: hidden; transition: 0.5s;;}
+.VDsidebar a 				{padding: 0px ;display: block; transition: 0.3s;}
+.VDsidebar .closebtn 		{position: absolute;top: 20px;right: 10px; margin-left: 50px;font-size:36px; font-weight: 900;}
+
+/* PDCDetails Sidebar Clickable */
+.pdcdetsidebar 				{/* width: 0; position: absolute; */ z-index: 500;top:0px;right: 0;  overflow-y: hidden;overflow-x: hidden; transition: 0.15s;height:100%}
+.pdcdetsidebar a			{padding: 0px ;display: block; transition: 0.15s;}
+.pdcdetsidebar .closebtn 	{position: relative;margin-left: 15px;font-weight: 900;font-size: 20px;}
+.pdc-card:hover				{border-color:var(--light)!important;}
+.btn-round					{border-radius:50%;width:var(--line-height);height:var(--line-height);border:1px solid var(--light);}
+
+button:focus { /* outline: 1px dotted; */  outline: 0px auto -webkit-focus-ring-color; }
+[data-toggle="collapse"] .fa:before 
+							{content: "\f068";}
+[data-toggle="collapse"] .fa 
+							{content: "\f067";}
+[data-toggle="collapse"].collapsed .fa:before 
+							{content: "\f067";}
+.card-title.import 			{min-height: 60px;}
+
+input[type=radio] + label 	{color: #ccc; font-style: italic;}
+input[type=radio]:checked + label
+							{color: #f00; font-style: bold; background-color:#F60;}
+
+
+.mini-card					{font-size: 90%;border: 1px dashed #ddd!important; padding:0.25rem 1rem; border-radius: .5rem;min-height: 2rem;max-height: 240px;overflow-y: clip;}
+.page-title					{display: inline-block; margin-right: 1rem;  font-size: 1.25rem;font-weight:700;  line-height: inherit;  min-height:50px; white-space: nowrap;}
+.nameBadge					{font-size: 1rem;font-weight:700;padding:.6rem;border-radius: 50%;width:2.2rem;height:2.2rem;}
+.logo-image 				{background-image: url("/images/favicon_dark.png");;width:30px;height: 30px;background-position: center;background-repeat: no-repeat;	background-size: cover;	position: relative;}
+.gray                       {color:var(--gray);}
+.DashTileMap				{height:50vh;}
+.badge-light 				{color: var(--dark);background-color: var(--light);line-height:var(1rem);}
+.profile-card-2 .profile 	{border-radius: 50%;position: absolute;	top: 50px;	left: 80px;	max-width: 100px;	border: 3px solid rgba(255, 255, 255, 1);	-webkit-transform: translate(-50%, 0%);	transform: translate(-50%, 0%);}
+.profile-card-2 .card-header{height:100px;}
+.profile-card-2 .card-body	{margin-top:2rem;}
+/* Datatable row styling */
+/* datatables */
+.dt-buttons.btn-group		{float:right;}
+div.dataTables_wrapper div.dataTables_filter
+							{text-align: right;    float: left;	margin-right: 10px;}
+div.dataTables_wrapper div.dataTables_paginate
+							{float: right;}
+div.dataTables_wrapper div.dataTables_info
+							{float: left;}
+
+table.dataTable 			{clear: both;margin-top: 6px !important; margin-bottom: 6px !important; max-width: none !important; border-collapse: separate !important;line-height:var(--line-height) ;}
+table.dataTable.stripe tbody tr,
+table.dataTable.display tbody tr.odd
+							{ border-bottom: 1px solid #ddd;}
+table.dataTable.display tbody tr,
+table.dataTable.stripe tbody tr
+							{line-height: 42px;border-bottom: 1px solid #ddd;margin-bottom:3px; border-radius:5px }
+table.dataTable.stripe tbody tr:hover,
+table.dataTable.display tbody tr:hover
+							{background-color:var(--primary);color:var(--light);border-radius: .5rem;}
+table.dataTable.display 	{min-height:80px}
+table.dataTable.row-border tbody tr:hover
+							{background-color:  var(--primary);color : #fff;}
+/* tr.even:hover, tr.odd:hover	{background-color:  var(--primary); color: #fff;box-shadow: 3px 3px 5px #333;} */
+table.dataTable td.dataTables_empty,
+table.dataTable th.dataTables_empty
+							{text-align: center;color:  var(--primary);;}
+
+.dataTables_scrollHead		{/*padding-top:1rem;*/ }
+.table.dataTable th 		{line-height:var(--line-height);}
+.table thead th 			{border-bottom: 0px;border-top: 0px }
+.table td, table th 		{padding:0px;}
+
+table.dataTable tbody th,
+table.dataTable tbody td 	{padding: 0px 6px;}
+
+table.dataTable thead>tr>th.sorting_asc,
+table.dataTable thead>tr>th.sorting_desc,
+table.dataTable thead>tr>th.sorting,
+table.dataTable thead>tr>th.sorting_disabled,
+table.dataTable thead>tr>td.sorting_asc,
+table.dataTable thead>tr>td.sorting_desc,
+table.dataTable thead>tr>td.sorting
+							{padding-top: 1rem;font-weight:400;line-height:1rem;border-bottom: 1px solid var(--dark);}
+table.dataTable tr.dtrg-group td
+							{background-color:var(--white); }
+table.dataTable tr.dtrg-group td:hover
+							{background-color: var(--primary); color:#fff; }
+table.dataTable tr.dtrg-group.dtrg-level-0 td
+							{font-weight:bold}
+table.dataTable tr.dtrg-group.dtrg-level-1 td,
+table.dataTable tr.dtrg-group.dtrg-level-2 td
+							{background-color:#f0f0f0;padding-top:0.25em;padding-bottom:0.25em;padding-left:2em;font-size:0.9em}
+table.dataTable tr.dtrg-group.dtrg-level-2 td
+							{background-color:#f3f3f3}
+.dataTables_length			{display: none;}
+.dataTables_scrollHead table.dataTable
+							{border-bottom: 1px solid #ddd;}
+div.dataTables_wrapper div.dataTables_paginate ul.pagination
+							{margin: 5px 0;}
+div.dataTables_wrapper div.dataTables_processing
+							{background-color: transparent;}
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:before,
+table.dataTable thead .sorting_desc_disabled:after
+							{opacity: 0;}
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:after
+							{right: 1rem;font-family:'Font Awesome 5 Pro';content: "\f0dd";}
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_desc_disabled:before
+							{right: 1em;content: "\f0de";}
+.cell_bold					{font-weight:700;}
+.cell_warning				{font-weight:700;color: #FFA500;}
+.cell_danger				{font-weight:700;color: #d73814;}
+.sorting_desc,
+.sorting_asc				{font-weight: 600!important;}
+.sorting_1					{font-weight: 600!important;}
+.page-item.disabled .page-link
+							{border-color: transparent;background-color: transparent;color:#ddd}
+.page-item.active .page-link
+							{z-index: 1;color: #fff;background-color:  var(--primary); border-color: var(--primary); box-shadow: 0px 0px 0px }
+.page-link 					{border: 0px}
+.page-link:hover 			{z-index: 2;color: #fff;background-color:#495057;  border-color:#495057;box-shadow:0 0 0;}*/
+.page-link:focus 			{z-index: 3; outline: 0;box-shadow: 0 0 0 transparent;}
+.dataTables_scroll 			{border-bottom: 1px solid #ddd;}
+.sorting_1 					{font-weight: 700;}
+.table-striped tbody tr:nth-of-type(odd):hover,
+.display table tbody tr:hover
+							{background-color: var(--primary);color:var(--light)}
+.rowTotal					{background-color: var(--light);color:var(--primary);;border-top: 2px solid var(--primary)!important;}
+.hide						{display:none !important;}
+.info-box-number			{font-size: 150%;font-weight: 700;}
+.custom-control-input:focus~.custom-control-label::before
+							{box-shadow:none;}
+.rotate-icon				{-webkit-transform: rotate(180deg); transform: rotate(180deg);alignment: right}
+.dataTables_length          {display:hidden;}
+.pad						{height: calc(100vh - 170px);}
+.panel-title               			{border-bottom: 1px solid #ddd;background-color:rgba(0,0,0,.03);}
+.TripListName				{font-weight:400;}
+.TripListNameS				{font-weight:400;font-size:90%;}
+.TripListing,
+.TripListingActive			{margin: 6px;padding: 5px;line-height: 26px;background-color: var(--body);border-radius:.5rem}
+.DriverInfo 				{margin-bottom: 0px ;min-height: 60px;border-top:0px solid #ddd; background-color:transparent;}
+.TripListingBreak 			{padding:0px;margin: 6px ;line-height: 20px;background-color: transparent;border-radius:.5rem}
+.TripListingEmpty 			{margin-bottom: 0px ;}
+.DriverInfo:hover 			{margin-bottom: 0px;color: #666;}
+.TripListing:hover,
+.TripListingActive:hover	{color: #002b51;background: #ccdceb linear-gradient(180deg	,#d4e1ee,#ccdceb) repeat-x;	border-color: #b8cfe3;border-radius:.5rem;}
+.VehicleListing 			{padding:5px;line-height:26px;margin-left:10px;margin-right:10px;background-color: var(--body);margin-bottom: .5rem;border-radius: .5rem}
+.VehicleListing:active,
+.VehicleListing:hover 		{color: #002b51;background: #ccdceb linear-gradient(180deg	,#d4e1ee,#ccdceb) repeat-x;	border-color: #b8cfe3;border-radius:.5rem;}
+.VehicleListInfo 			{font-weight: 400;}
+.VehicleListName 			{font-weight: 700;}
+.group-selector				{border-radius: 2rem;padding-left:.25rem;margin-right:1rem;}
+
+.StatusLine					{line-height:36px;}
+.StatusValue				{font-weight:700;}
+
+.available 					{color : var(--light);}
+.rest 						{color : var(--success);}
+.drive 						{color : var(--primary);}
+.work 						{color : var(--orange);}
+.bg-available				{background-color : var(--light); color: var(--dark)}
+.bg-rest 					{background-color : var(--success); color: var(--light)}
+.bg-drive 					{background-color : var(--primary); color:var(--light)}
+.bg-work 					{background-color : var(--orange); color:var(--light)}
+
+
+/*  leaflet overruling */
+.leaflet-touch .leaflet-bar {border: 0px solid rgba(0,0,0,0.2);background-clip: padding-box;}
+.leaflet-control-layers 	{background: rgba(255,255,255,0.4);border-radius: 0px; box-shadow: none ;}
+.leaflet-retina .leaflet-control-layers-toggle
+							{ font-size:1rem;opacity:1;font-weight:700;background-size: 20px 20px;}
+.leaflet-control-layers-toggle:before
+							{font-family:'Font Awesome 5 Pro'; left:5px;top:3px; font-size:1rem;opacity:1;font-weight:700;content:"\f5fd"}
+.leaflet-touch .leaflet-control-layers-toggle
+							{width: 30px;  height: 30px;}
+.leaflet-control-layers-toggle
+							{background-color:#FFF; width: 26px; height: 26px;border-radius:4px;background-size: 18px 18px; box-shadow: 0 1px 5px rgba(0,0,0,0.65);}
+.leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar
+							{border: 0px solid rgba(0,0,0,0.2);background-clip: padding-box;}
+.leaflet-control-layers-expanded
+							{padding: 6px 10px 6px 6px;color: var(--gray);background: var(--light); box-shadow:0px 2px 8px #333;border-radius:4px}
+.leaflet-tooltip 			{position: absolute;padding: 0px;border:0px;background-color:inherit}
+.leaflet-container 			{font: inherit;}
+.rotated-markerdiv 			{text-align: center; background-color: inherit; border: 1px solid #000;}
+.rotate-north 				{transform: rotate(0); -moz-transform: rotate(0);-webkit-transform: rotate(0); -o-transform: rotate(0);-ms-transform: rotate(0);}
+.leafletpopup               {background-color: var(--light);line-height: 40px}
+.leaflet-bar button,
+.leaflet-bar button:hover 	{width: 26px;height: 26px;line-height: 26px;}
+
+
+/* MarkerCluster overruling */
+.marker-cluster-small		{background-color: rgba( 38, 108,171, 0.2);}
+.marker-cluster-small div 	{background-color: rgba( 38, 108,171, 0.7);color:#fff;}
+.marker-cluster-medium 		{background-color: rgba( 38, 108,171, 0.5);}
+.marker-cluster-medium div 	{background-color: rgba( 38, 108,171, 0.7);color:#fff;}
+.marker-cluster-large 		{background-color: rgba( 38, 108,171, 0.9);}
+.marker-cluster-large div 	{background-color: rgba( 38, 108,171, 0.7);color:#fff;}
+
+/* Start Reportlogo settings */
+.trips, .distance, .fuelused,
+.fuelusage, .co2,.days, .sum-drive,
+.sum-work, .sum-rest, .sum-avail,
+.sum-today, .sum-week		{height:54px; line-height:18px;text-align:right;font-size:100%; border-bottom: 1px solid #aaa; position:relative;}
+.trips::before,
+.distance::before,
+.fuelused::before,
+.fuelusage::before,
+.co2::before,
+.days::before,
+.mail::before,
+.report::before,
+.notes::before,
+.sum-drive::before,
+.sum-work::before,
+.sum-rest::before,
+.sum-avail::before,
+.sum-today::before,
+.sum-week::before			{position:absolute;font-family:'Font Awesome 5 Pro'; top:22px;left:10px; font-size:28px;opacity:.3;font-weight:900;}
+.trips::before				{content:"\f11e";  }
+.distance::before			{content:"\f4d7"; }
+.fuelused::before			{content:"\f52f"; }
+.fuelusage::before			{content:"\f043"; }
+.co2::before				{content:"\f46a"; }
+.days::before				{content:"\f073"; }
+.mail::before				{content:"\f086";text-align:right;font-size:48px;right:30px }
+.report::before				{content:"\f15c";text-align:right;font-size:48px;right:30px }
+.notes::before				{content:"\f46d";text-align:right;font-size:48px;right:30px }
+.sum-drive::before			{content:"\f2bd"; }
+.sum-work::before			{content:"\f7d9"; }
+.sum-rest::before			{content:"\f236"; }
+.sum-available::before		{content:"\f0c8"; }
+.sum-today::before			{content:"\f783"; }
+.sum-week::before			{content:"\f784"; }
+
+/* End Reportlogo settings */
+
+.editor_delete:hover,
+.editor_edit:hover			{color:#FFF;}
+
+/* Start VehicleInfo settings */
+.truck_background			{position:relative;}
+.truck_background			{position:relative;}
+.truck_background::before	{position:absolute;font-family:'Font Awesome 5 Pro'; top:80px;left:-10px;  color: rgba(168,208,230,0.2);font-size:8rem;opacity:.9;font-weight:900;}
+.truck_background::before	{content:"\f0d1"; }
+.trailer_background::before	{position:absolute;font-family:'Font Awesome 5 Pro'; top:80px;left:-10px;  color: rgba(168,208,230,0.2);font-size:8rem;opacity:.9;font-weight:900;}
+.trailer_background::before	{content:"\e041 \f4df"; }
+/* End VehicleInfo settings */
+::-webkit-scrollbar-track	{background: rgba(220, 220, 220, 0.9); }
+::-webkit-scrollbar-track-piece
+{background-color: transparent;}
+::-webkit-scrollbar-thumb	{background-color: var(--primary);}
+::-webkit-scrollbar 		{width:4px;}
+
+.sloader 					{border: .2em solid var(--light); border-left: .2em solid var(--primary);}
+.loader 					{border: .2em solid var(--light); border-left: .2em solid var(--primary);}
+.bloader 					{border: .3em solid var(--light); border-left: .3em solid var(--primary);}
+
+.section 					{position: relative;padding-top: 0rem;	padding-bottom: 0rem;}
+/* Login animation */
+#slider 					{width:100%;height:100%; animation-delay: 0s;  transform: translateY(-100%);  -webkit-transform: translateY(-100%);}
+.slide-in 					{animation: slide-in 1.5s forwards;  -webkit-animation: slide-in 0.6s forwards;}
+.slide-out 					{animation: slide-out 2.5s forwards;  -webkit-animation: slide-out 2.5s forwards;}
+@keyframes slide-in 		{100% { transform: translateY(0%); }}
+@-webkit-keyframes slide-in {100% { -webkit-transform: translateY(0%); }}
+@keyframes slide-out 		{  0% { transform: translateY(0%); } 100% { transform: translateY(-100%); }}
+@-webkit-keyframes slide-out{  0% { -webkit-transform: translateY(0%); } 100% { -webkit-transform: translateY(-100%); }}
+.logintext					{font-size:90px;color:#fff;font-weight:900;text-shadow: 2px 2px 5px #bbb;text-shadow: 2px 2px 13px var(--primary);position: fixed;top: 50%; left: 50%; transform: translate(-50%, -50%);}
+.pagina-login				{background-color: inherit;border-radius: 0px; width: 1400px;position: fixed;top: 50%; left: 50%; transform: translate(-50%, -50%);border-radius:1rem}
+.section-login 				{margin:auto;height: calc(100vh);background-color: var(--secondary);}
+.section-login-banner		{position: relative;background-color:var(--gray-dark);max-width: 100%;	margin:auto;height: 230px}
+.login-body 				{background-color:var(--light); }
+.carousel-indicators li 	{opacity: 0.2;transition: opacity .6s ease;position: relative;  background-color: var(--primary);}
+.carousel-item 				{min-height:100px;max-height:250px}
+.carousel-indicators 		{bottom: 5px;position: relative;}
+.logintext					{animation: fadein 5s; -moz-animation: fadein 5s;  -webkit-animation: fadein 5s;  -o-animation: fadein 5s;}
+.title						{font-size:90px;color:var(--light);font-weight:900;text-shadow: 2px 2px 5px #bbb;text-shadow: 2px 2px 13px var(--primary);}
+.login-body 				{background-color:transparent; }
+.loginbox 					{min-height:500px;}
+.loginbox-info				{min-height:65vh;border-radius:0px;border-bottom-right-radius: .5rem;border-top-right-radius: .5rem;}
+.login-text					{font-size :75px; font-weight:700; line-height:75px;}
+.login-text-big				{font-size :150px; font-weight:700;line-height:100px;}
+.login-control 				{border:0;  border-radius:0px; display: block;font-weight:700;
+	width: 100%;padding: .375rem ; line-height: 1.5; background-clip: padding-box;border-radius: .5rem;transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;}
+.login-control:focus		{outline: 0;FONT-WEIGHT: 700;}
+.login-bg					{background-image: url("/images/aerialCrossRoads.jpg");
+	background-size: 100%;  background-repeat: no-repeat;  background-position: center top; border-top-left-radius:.5rem;border-bottom-left-radius:.5rem; }
+.trans-light				{background-color:rgba(0,0,0,0.6);color:var(--light);border-bottom-left-radius: .5rem;}
+
+/*  Sidebar */
+.leftmenu 					{position: fixed;top: 90px;bottom: 0;left: 30px;z-index: 100; /* Behind the navbar */	padding: 0;	box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);}
+.leftmenu-sticky 			{position: -webkit-sticky;position: sticky;	 	height: calc(100vh - 180px);	padding-top: .5rem;	overflow-x: hidden;	overflow-y: auto;  	border-radius: .5rem;	box-shadow: 2px 2px 15px #ddd; }
+.nav-link:focus,
+.nav-link:hover 			{background-color: var(--primary);color: var(--light);}
+.leftmenu .nav-link.active 	{color: #007bff;}
+.leftmenu-heading 			{font-size: .75rem;text-transform: uppercase;}
+.rightpage					{top:50px;}
+
+.group-selector .ss-main .ss-single-selected
+							{font-weight:700;color:var(--light);text-transform: uppercase; line-height: var(--line-height);}
+.accordion>.card>.card-header
+							{margin-bottom: 0px;}
+.dropdown-menu.megamenu.show{left:0rem; right:0; width:900px; padding:0px;top: 35px; }
+.megamenu.show 				{margin-top: .25rem;}
+.dropdown-menu				{font-size:100%;}
+.dropdown-toggle 			{color: rgba(255,255,255,0.5);}
+.dropdown-item.hover,
+.dropdown-item:focus 		{color: var(--light);text-decoration: none;background: var(--primary) linear-gradient(180deg,var(--primarygradient),var(--primary)) repeat-x;}
+#pdc_main,#pdc_details,#pdc_check,#pdc_details,
+#pdc_details2,#pdc_details3	{width:33%;}
+
+.telltale-INFO				{background-color: var(--primary);border: 1px solid var(--primary); padding: .25rem;border-radius:.5rem;margin-right:.5rem;margin-bottom:.5rem;color:#fff}
+.telltale-YELLOW 			{background-color: var(--yellow);border: 1px solid var(--yellow); padding: .25rem;border-radius:.5rem;margin-right:.5rem;margin-bottom:.5rem;color:#fff}
+.telltale-RED				{background-color: var(--danger); border: 1px solid var(--danger);  padding: .25rem;border-radius:.5rem;margin-right:.5rem;margin-bottom:.5rem;color:#fff}
+
+ul							{margin-bottom:0px;}
+/**
+ * placeholder-loading v0.4.0
+ * Author: Zalog (https://www.zalog.ro/)
+ * License: MIT
+ **/
+.ph-item            {position:relative;display:flex;flex-wrap:wrap;overflow:hidden;direction:ltr;background-color:transparent;/*border:1px solid #e6e6e6;border-radius:2px*/}
+.ph-item,
+.ph-item *,
+.ph-item :after,
+.ph-item :before    {box-sizing:border-box}
+.ph-item:before     {position:absolute;top:0;right:0;bottom:0;left:50%;z-index:1;width:500%;margin-left:-250%;background:linear-gradient(90deg,hsla(0,0%,100%,0) 46%,hsla(0,0%,100%,.35) 50%,hsla(0,0%,100%,0) 54%) 50% 50%;-webkit-animation:phAnimation .8s linear infinite;animation:phAnimation .8s linear infinite;content:" ";pointer-events:none}
+.ph-item>*          {display:flex;flex:1 1 auto;flex-flow:column;margin-bottom:15px;padding-right:15px;padding-left:15px}
+.ph-row             {display:flex;flex-wrap:wrap;margin-top:-7.5px}
+.ph-row div         {height:10px;margin-top:7.5px;background-color:rgba(0,0,0,.1)}
+.ph-row .big,
+.ph-row.big div     {height:20px}
+.ph-row .empty      {background-color:hsla(0,0%,100%,0)}
+.ph-col-1           {flex:0 0 8.167%;padding-right:10px}
+.ph-col-2           {flex:0 0 16.66667%;padding-right:10px}
+.ph-col-4           {flex:0 0 33.33333%}
+.ph-col-6           {flex:0 0 50%}
+.ph-col-8           {flex:0 0 66.66667%}
+.ph-col-10          {flex:0 0 83.33333%}
+.ph-col-12          {flex:0 0 100%}
+[class*=ph-col]     {direction:ltr}
+[class*=ph-col]>*+.ph-row
+                    {margin-top:5px}
+[class*=ph-col]>*+* {margin-top:7.5px}
+.ph-avatar          {position:relative;width:100%;min-width:60px;overflow:hidden;background-color:rgba(0,0,0,.1);border-radius:50%}
+.ph-avatar:before   {display:block;padding-top:100%;content:" "}
+.ph-picture         {width:100%;height:80px;background-color:rgba(0,0,0,.1)}
+
+@-webkit-keyframes phAnimation{0%{transform:translate3d(-30%,0,0)}to{transform:translate3d(30%,0,0)}}
+@keyframes phAnimation{0%{transform:translate3d(-30%,0,0)}to{transform:translate3d(30%,0,0)}}
+
+/*************************** end Placeholder ***********************/
+
+
+
+@media (max-width: 770px) {
+	.title						{font-size:46px; }
+	.subtitle					{font-size:26px; }
+	.pagina-login				{background-color: #fff;border-radius: 0px;box-shadow: 5px 5px 15px #ddd; width: 100%;position: fixed;top: 50%; left: 50%; transform: translate(-50%, -50%);height:100%}
+	.section-login 				{background-color:transparent;max-width: 100%;height: calc(100vh - 60px);}
+	.section-login-banner		{position: relative;background-color:transparent;max-width: 100%;margin:auto;height: 230px}
+	.navbar-collapse 			{ padding: 10px;border-radius: .5rem;background-color: var(--secondary);position: relative;	top: 20px;}
+	.section-login 				{background-color:transparent;height: calc(100vh ); margin: 0 auto;}
+	.navbar-nav-extra			{display: flex;flex-direction: row;padding: 10px;margin-bottom: 0;list-style: none; }
+	.pagina						{margin: 0px ; height: calc(100vh - 170px);overflow-y:auto;overflow-x:hidden;padding:0px 10px;}
+	.login-text-big 			{font-size: 60px;height:100%;}
+	.login-text-big 			{font-size: 60px;}
+	.loginbox 					{min-height: 30vh;}
+	.login-text 				{font-size: 40px;}
+	.login-bg					{border-radius: 0px;background-position: center center;background-repeat: no-repeat;background-size: cover;	}
+	.logintext 					{font-size: 60px;color: #fff; font-weight: 900;text-shadow: 2px 2px 13px var(--primary); width:90%;position: fixed; top: 50%; transform: translate(-50%, -50%);}
+	.loginbox-info				{min-height:calc(30vh);  }
+	.title						{font-size:50px; }
+	.subtitle					{font-size:16px; }
+	.DashTile 					{min-height:30px;}
+	.DashGroupTile 				{background-color: #eee; min-height: 150px; max-height: 600px; margin-bottom: 30px; margin-left: -20px; margin-right: -20px; border-radius: 10px;}
+	.DashTileMap, #dpad			{display:none;}
+	.page-title-secondary 		{display:none;}
+	.info-box-number 			{font-size: 16px;font-weight:700}
+	#VehicleInfoD 				{margin: 0 .5rem 0 .5rem;}
+
+	.navbar-mobile				{background-color:#F2f2f2; color: #222;}
+	.navbar-brand				{font-size:1rem;font-weight:700;color:#111;}
+	.navbar-dark 				{color: #222;}
+	.navbar-dark .navbar-toggler{border: 0;color: #111;}
+	.border-subtitle 			{background-color: #F2f2f2;    font-size: 0.9rem;}
+	.img-thumbnail 				{max-width: 60px!important;height: 60px!important;	}
+	.form-group 				{margin-bottom: 0.5rem;}
+	.show-md					{display:none);}
+	table.dataTable thead>tr>td.sorting
+	{padding-top: .125rem;font-weight:400}
+	.dataTables_scrollHead		{padding-top:0rem; }
+	#pdc_main,#pdc_details,#pdc_check,#pdc_details,
+	#pdc_details2,#pdc_details3	{width:100%;}
+	.pdcdetsidebar 				{width: 0; position: absolute;  z-index: 500;top:0px;right: 0;  overflow-y: hidden;overflow-x: hidden; transition: 0.15s;height:100%}
+	.pdcdetsidebar a				{padding: 0px ;display: block; transition: 0.15s;}
+	.pdcdetsidebar .closebtn 	{position: relative;margin-left: 15px;font-weight: 900;font-size: 20px;}
+	.navbar .has-megamenu		{position:static!important;}
+	.dropdown-menu.megamenu.show {left:5rem; right:0; width:96%; padding:20px;top: 45px; }
+	.megamenu.show 				{margin-top: .25rem;}
+}
+
+@media (max-width: 600px) {
+	.left 					{float: left; width:310px;height: 99%;background-color:#fff; padding: 5px;position: absolute;overflow-y: noscroll}
+	.pad 	 				{float: left; width:100%; height: calc(45vh);;position:relative;}
+	.dpad 	 				{float: left; width:100%; height: calc(45vh);position:relative;}
+	.dlpad 	 				{float: left; width:100%; height: calc(40vh);position:relative;}
+	.dgpad 	 				{float: left; width:100%; height: calc(30vh);position:relative;}
+	.IndexPad 	 			{float: left; width:100%; height: calc(40vh - 80px);position:relative;}
+	.reportpad 	 			{float: left; width:100%; height: calc(50vh - 30px);position:relative;}
+	#map 	 				{float: left; width:100%; height: 100%;}
+	#driverlist				{float: left; width:100%; height: 480px;position:relative;}
+	.alertpad 	 			{float: left; width:100%; height: calc(100vh - 220px);position:relative;}
+	.advisepad 	 			{float: left; width:100%; height: calc(40vh);position:relative;}
+	body 					{display:block;/* padding-top: 60px; */;}
+	.mob-padding			{margin-bottom:20px;	}
+	.mapleftcolumn 			{margin-left: 1rem; padding-left: 1rem}
+	.maprightcolumn 		{margin-right:1rem ; padding-right: 1rem;}
+
+	#VehicleInfo 			{min-height: calc(100vh - 30px);height: calc(60vh - 30px);line-height:16px;overflow-y:hidden;overflow-x:hidden;padding:10px;}
+	.VehicleList,
+	.VehicleList:link,
+	.VehicleList:visited,
+	.VehicleList:hover		{line-height:18px;width:100%;color: black;overflow-y: scroll;text-decoration:none;}
+	#VehicleDetails			{line-height:12px;overflow-y: auto;overflow-x: hidden;}
+	#VList					{height: calc(100vh - 30px);line-height:12px;overflow-y: auto;overflow-x: hidden;min-height: 200px;padding:10px;}
+	#VehicleAlertDetails,
+	#VehicleAlert 			{height: calc(60vh);line-height:12px;overflow-y: hidden;overflow-x: hidden;min-height: 200px;padding:10px;overflow-y: hidden;	}
+	.FleetGraph				{height:150px;padding:0px;margin:0px;text-align:center;vertical-align:center;}
+	#AdviseData,
+	#AlertHistory 			{line-height:12px;overflow-y: auto;	overflow-x: hidden;padding:10px;overflow-y: hidden;	}
+	.AdviseHeader			{padding : 10px 10px 10px 5px;font-size:150%;	width: 100%;display: table;		}
+	.AdviseBox				{min-height:10px;margin-right:3px;margin-left:3px;		padding:10px;	}
+	.AdviseText				{padding:5px;line-height:14px;overflow-y:auto;overflow-x:hidden;		min-height: 10px;	}
+	#rFMSTable				{padding-bottom:10px}
+	.info-box-number		{display: block;font-weight: bold;}
+	.notification-area 		{max-height : calc(40vh);overflow-y: auto;vertical-align: top;}
+	.content,
+	.form-control 			{border-radius: 0px;padding:0px;}
+	.form-control-ro 		{border-radius: 0px;padding:.5rem;background-color: var(--body);border-radius: .5rem;line-height: 1rem;}
+	.content-header > .breadcrumb  {display:none;}
+	.navbar-nav .dropdown-menu .dropdown-item { position: static; float: none;}
+	.collapse.show 			{display: block; }
+	#VehicleInfoD 			{margin: 0 0 0 .5rem; height: calc(55vh - 100px);;}
+	#VehicleSearch 			{display:none;}
+	.section-full 			{background-color: transparent; max-width: 100%; margin: auto;}
+	.border-subtitle		{font-size: 0.9rem;margin-top: -1.2rem;	margin-left: 1rem;	padding: .5rem;}
+	.chatpad 				{height: calc(100vh - 300px);border-radius: .35rem;}
+	.trans-light 			{border-bottom-left-radius: 0rem;}
+	.loginbox-info			{border-radius:0px;}
+	.inner-pagina 			{overflow-y: auto;}
+	::-webkit-scrollbar 	{width:4px;}
+	.pdc-pagina				{overflow-y:auto;}
+	.pdc-card-pagina 		{overflow-y: auto;overflow-x: hidden;margin-right: 0px;	margin-left: 0px;height: calc(100vh - 250px);}
+	.pdc-check-pagina 		{overflow-y: auto;overflow-x: hidden;margin-right: 0px;	margin-left: 0px;max-height: calc(100vh - 375px);	}
+	.card-body				{padding:.75rem;}
+	.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl { padding-right: 1px;  padding-left: 1px; }
+} /*  End of Settings for small screen */
+
+
+
+.highcharts-data-label text, text.highcharts-data-label {
+	fill: #aaa;
+}
+.divright {
+	border-bottom-right-radius: .5rem;
+	border-top-right-radius: .5rem;
+}
+.moveleft {
+	margin-left: -15px;
+	/* border-bottom-right-radius: .5rem; */
+	margin-right: 0px;
+}

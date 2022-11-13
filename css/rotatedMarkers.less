@@ -1,0 +1,11 @@
+.generate-rotate-rules(359);
+.generate-rotate-rules(@n, @i: 0) when (@i =< @n) {
+    .rotate-@{i} {
+        transform: rotate(unit(@i, deg)); /* CSS3 */
+        -moz-transform: rotate(unit(@i, deg)); /* Firefox */
+        -webkit-transform: rotate(unit(@i, deg)); /* Webkit */
+        -o-transform: rotate(unit(@i, deg)); /* Opera */
+        -ms-transform: rotate(unit(@i, deg)); /* IE 9 */
+    }
+    .generate-rotate-rules(@n, (@i + 1));
+}
