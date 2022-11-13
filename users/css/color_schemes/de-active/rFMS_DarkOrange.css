@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+body,select						{font-family: 'Ubuntu', Helvetica,sans-serif; font-size:12px; color:#a4a7b5}
+.bg-dark 						{background-color: #333543 !important;    border-bottom: 0px solid #FF6600;}
+.bg-rdark						{background-color: #1c1e2d !important;    border-bottom: 0px solid #FF6600;}
+.bg-footer 						{background-color: rgba(255,255,255,0.8);}
+.navbar-dark 
+.navbar-brand  					{color: #EEE;}
+.navbar-dark 
+.navbar-nav 
+.nav-link 						{color: #EEE;}
+.navbar-dark 
+.navbar-brand:focus, 
+.navbar-dark 
+.navbar-brand:hover 			{color: #FFF;}
+.navbar-dark 
+.navbar-nav 
+.nav-link:focus, 
+.navbar-dark 
+.navbar-nav 
+.nav-link:hover 				{color: #FFF}
+.login-body 					{    }
+body 							{background-color:#1c1e2d;}
+.container 						{background-color:#1c1e2d;max-width: 2100px; max-height: calc(100vh - 110px);}
+.section-full 					{background-color:#1c1e2d;height: calc(100vh - 108px);}
+.section-login 					{background-color:#1c1e2d;}
+
+/* CARD section */
+.card-title, 
+a.card-title 					{color: #A4A7B5 ;  text-transform:lowercase;  background-color: #333543;border-bottom : 0px solid #FF6600; }
+.card 							{background-color:#1c1e2d; color:#A4A7b5; border: 0px solid rgba(0,0,0,.125); }
+.card-body 						{background-color:#333543; color:#efefef; /*box-shadow: 1px 1px 5px rgba(0,0,0,0.15);     border: 1px solid rgba(0,0,0,.125); */}
+.card-header h4 				{font-weight:500;color: #666;font-size:120%;}
+.card-header 					{font-weight:700;color: #666;border-bottom: 1px solid #777;}
+.logo-footer 					{border-top: none;color:#000;}
+.logo-footer 
+.payoff 						{color:#FFF;}
+.input-group-addon			 	{color:#A4A47B5;background-color: #1c1e2d; border: 0px solid #A4A7B5;border-bottom: 1px solid #777;}
+.form-control 					{color:#67757c;border:0;border-bottom: 1px solid #777; border-radius:0px; }
+select 							{background-color: transparent; border:0; color: #A4A7B5;border-bottom:1px solid #333543}
+a.VL_list 						{color: transparent;}
+.DashTile:hover, 				{/*box-shadow: 1px 1px 5px #888;margin: -5px;margin-bottom: 15px; */background-color: transparent;}	
+.DashTile 						{box-shadow: 0px 0px 0px #F6f6f6;/* ;margin: -5px;margin-bottom: 15px; */background-color: #333543;}	
+option.SOptAll					{color:red;font-weight:700;}
+.bg-trans 						{background-color: transparent;}
+.VehicleListName				{color:#fff;}
+.VehicleListInfo,
+.tooltipicon					{color:#a4a7b5;    font-weight: 400;}
+.dropdown-item:focus,
+.dropdown-item:hover 			{color: #FFF;text-decoration: none;background-color: #FF6600;font-size:13px;}
+.header.headroom 				{position: fixed; top: 0; left: 0; transition: transform 250ms ease-in-out;  width: 100%;  z-index: 1000;}
+.sticky-top 					{position: sticky;top: 0;z-index: 1020;}
+.meta-navigation__list			{flex-direction: row;}
+.navbar-nav 					{display: flex;flex-direction: column; padding-left: 0; margin-bottom: 0; list-style: none;}
+ol, ul, dl 						{margin-top: 0; margin-bottom: 1rem;}
+
+@media (max-width: 768px) {
+.container 					{max-width: 100%; min-height: calc(100vh-60px);background-color: transparant; padding-left:0px ;padding-right:0px;}
+.card-header h4 			{font-weight:500;color: #FF6600;font-size:100%;}
+.card-header 				{background-color:#333543;} 
+.card-title, 
+a.card-title 				{color: #A4A7B5 ;  text-transform:UPPERCASE;font-size:110%; background-color: #333543;border-bottom : 0px solid #FF6600; }
+.info-box-number 			{font-size: 24px;  font-weight: 700;}
+body,select					{font-family: 'Roboto Mono', Helvetica,sans-serif; font-size:15px;}
+.row 						{margin-right: -20px;margin-left: -20px;}
+}
+article, aside, dialog, 
+figcaption, figure, footer, 
+header, hgroup, main, section 	{display: block;   overflow-y: auto;   overflow-x: hidden;    max-width: 2100px;    margin: auto;} 
+
+h4 								{font-weight:500;color: #FF6600;font-size:110%; }
+
+.info-box-number 				{font-size: 18px;  font-weight: 700;}
+.text-primary 					{color: #FF6600!important; }
+a.text-primary 					{color: #FF6600!important; }
+.nav-tabs 						{border-bottom: 1px solid #333543;}
+.nav-tabs .nav-link:link		{border-color: transparent;color:#a4a7b5; font-weight: 400;background-color: transparent;}
+.nav-tabs .nav-link:focus, 
+.nav-tabs .nav-link:hover 		{border-color: transparent;color:#FF6600; font-weight: 700;background-color: transparent;border-bottom: 3px solid #333543;}
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active 		{color: #a4a7b5;background-color: transparent;border-color: transparent;font-weight: 700;border-bottom: 3px solid #FF6600;}
+.dropdown-menu 					{color: #a4a7b5; background-color: #333543;}
+.dropdown-item 					{font-weight: 400;color: #a4a7b5;}
+.dropdown-divider 				{border-top: 1px solid #a4a7b5;}
+.page-link 						{color: #a4a7b5; background-color: transparent;  border: 1px solid #a4a7b5;}
+a.page-link,
+.page-link:focus, 
+.page-link:hover 				{color: #FF6600;}
+.page-item.disabled 
+.page-link 						{color: #a4a7b5;background-color: transparent; border-color: #a4a7b5;}
+.page-item.active .page-link 	{color: #fff;background-color: #FF6600; border-color: #FF6600;}
+.page-link:focus, 
+.page-link:hover 				{color: #FF6600;text-decoration: none;background-color: #e9ecef;border-color: #ddd;}
+::-webkit-scrollbar-track		{background: rgba(144, 144, 144, 0.4);}
+::-webkit-scrollbar-thumb		{background-color:rgba(0,168,107,0.2);}
+::-webkit-scrollbar 			{width:5px;}
+.delayedrow						{color:red;font-weight:400;}
+.correctedrow					{color:orange;font-weight:700;}
+.bg-primary 					{background-color:#FF6600;}
+.card-body 						{padding: 10px;}
+.text-info 						{color: #FF6600!important;}
+.dealerservice:hover 			{color: #fff;background-color: #FF6600;}
+.TripListName					{color:#a4a7b5;font-weight:400;}
+.tooltiptxt						{color:#F6F6F6;font-weight:400;}
+.TripListNameS					{color:#FF6600;font-weight:400;font-size:90%;}
+.TripListing, 
+.TripListingActive, .DriverInfo {border-top:1px solid #333543;border-left: 3px solid transparent;margin-bottom: 3px ;min-height: 35px;}
+.TripListingBreak 				{border-left: 3px solid transparent;margin-bottom: 3px ;}
+.TripListingEmpty 				{border-left: 3px solid transparent;margin-bottom: 3px ;min-height:5px;}
+.TripListing:hover, 
+.DriverInfo:hover 				{color: #666;border-left: 3px solid #FF6600; margin-bottom: 3px ;box-shadow: 2px 2px 5px #333543;}
+.TripListingActive:hover 		{border-bottom:1px solid #333543; color: #666;border-left: 3px solid #FC5F01;   margin-bottom: 3px ;box-shadow: 2px 2px 5px #333543;}
+.TripListingBreak:hover 		{color: #666;border-left: 3px solid #8AC543;  margin-bottom: 3px ;box-shadow: 2px 2px 5px #333543;}
+.VehicleListing 				{border-bottom:1px solid #333543;padding-bottom:5px;padding-top:5px;border-left: 3px solid transparent;}
+.VehicleListing:hover 			{border-bottom:1px solid #333543;padding-bottom:5px;padding-top:5px;color: #a4a7b5;border-left: 3px solid #FF6600;}
+.available 						{color : #f1f1f1;}
+.rest 							{color : #8AC543;}
+.drive 							{color : #FF6600;}
+.work 							{color : #FC5F01;}
+.bg-available					{background-color : #f1f1f1; color: #666}
+.bg-rest 						{background-color : #8AC543; color: #fff}
+.bg-drive 						{background-color : #FF6600; color: #fff}
+.bg-work 						{background-color : #FC5F01; color: #fff}
+
+/* Datatable row styling */
+table.dataTable.stripe tbody tr, 
+table.dataTable.display tbody tr.odd {background-color: rgb(38,108,171,0.15);}
+table.dataTable.stripe tbody tr, 
+table.dataTable.display tbody tr:hover {background-color: #FF6600;color : #fff;}
+tr.even:hover, tr.odd:hover 	{background-color: #FF6600; color: #fff;}
+.table .table 					{background-color: transparent;}
+table.dataTable tbody th, 
+table.dataTable tbody td 		{border-bottom: 1px solid #333;}
+.btn--ghost, 
+.btn-ghost, .btn-primary 		{background-image: -owg-linear-gradient(180deg,#FF6600 0,#FF6600 100%)!important;
+								 background-image: -o-linear-gradient(180deg,#FF6600 0,#FF6600 100%)!important;
+								 background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#FF6600),to(#FF6600))!important;
+								 background-image: -o-linear-gradient(top,#FF6600 0,#FF6600 100%)!important;
+								 background-image: linear-gradient(180deg,#FF6600,#FF6600)!important;
+								 border: 0; -webkit-transition: background-image .1s ease-in-out; -o-transition: .1s background-image ease-in-out;  transition: background-image .1s ease-in-out;}
+.bgprimary 						{background-color:#FF6600;}
+.notice 						{padding: 2px;	color: a4a7b5;   background-color: transparent; border-left: 2px solid #fafafa;	border-right: 2px solid #fafafa;   margin-bottom: 5px;}
+.notice a:visited				{padding: 2px;}
+.notice-sm 						{padding: 5px;font-size: 100%;}
+.notice-lg 						{padding: 35px;font-size: large;}
+.notice-success 				{border-color: #00a65a;font-size: 100%;}
+.notice-primary 				{border-color: #FF6600;font-size: 100%;}
+.notice-stopped 				{border-color: #66cce2;font-size: 100%;}
+.notice-success>strong 			{color: #80D651;}
+.notice-info 					{border-color: #FF6600;}
+.notice-info>strong 			{color: #FF6600;}
+.notice-warning 				{border-color: #FC5F01;}
+.bg-warning 					{background-color: #FC5F01;}
+.bg-white 						{background-color: #FFF;color:#444;}
+.warning 						{color: #FC5F01;}
+.notice-warning 				{color: #FC5F01;}
+.notice-danger 					{border-color: #d73814;background: rgba(183,28,28,.05);}
+.bg-danger 						{background-color: #d73814;}
+.bg-grey 						{background-color: #efefef;}
+.danger 						{color: #d73814;}
+.notice-danger 					{color: #d73814;}
+.login-bg						{/*	background-image: url("http://dafehvwpp30381/images/telematics_1.jpg"); */
+								 background-image: url('https://www.daf.com/-/media/images/daf-imagebank/press-releases/product-introductions/2019/malaga-press-kit/68-daf-range-shot-in-quarry.jpg');
+								 background-size: auto 100%;
+								 background-repeat: no-repeat;
+								 background-position: center center; 
+								 background-size: cover;}
+.bg-dashboard					{background-image: url('http://rfmsconnect.com/img/dashboard.png');	
+								 background-position: center center; background-repeat: no-repeat; background-size: cover;}
+.bg-default						{background-color: #efefef;}
+.primary 						{color:#FF6600;}
+.gray,.grey						{color:grey;}
+
+
+@font-face 						{font-family: 'Glyphicons Halflings';
+								 src: url('../fonts/glyphicons-halflings-regular.eot');
+								 src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');}
+.glyphicon 						{position: relative;top: 1px; display: inline-block; font-family: 'Glyphicons Halflings'; font-style: normal; font-weight: normal; line-height: 1; -webkit-font-smoothing: antialiased;  -moz-osx-font-smoothing: grayscale;}
+.glyphicon-calendar:before 		{content: "\e109";}  
+.VehicleListIconOk, 
+.VehicleListIconStopped,
+.VehicleListIconOk:hover 		{color: #FF6600;}
+.VehicleList:hover 				{color: #FF6600;}
+.TripHeader						{color: #FF6600;text-transform:uppercase}
+.TripDHeader  					{color: #a4a7b5;}
+::-webkit-scrollbar-thumb		{background-color:#FF6600;}
+:focus 							{border-color: #FF6600;}
+a 								{color: #FF6600;}
+a:hover 						{color: #FF6600; text-decoration: none;}
+.sloader 						{border: .2em solid rgba(218, 219, 223, 1); border-left: .4em solid #FF6600;}
+.loader 						{border: .4em solid rgba(218, 219, 223, 1); border-left: .4em solid #FF6600;}
+.h1, .h2, .h3, .h4, .h5, .h6, 
+h1, h2, h3, h4, h5, h6 			{color: #eee;}
+ :focus 						{border-color: #FF6600;outline:0;}
+.form-control:focus 			{color: #FF6600; background-color: transparent; border-color: #FF6600; outline: 0;box-shadow: 0 0 0 0; }
+.form-control 					{color: #a4a7b5; background-color: transparent; border-bottom: 1px solid #777; }
+.form-control:disabled, 
+.form-control[readonly] 		{background-color: transparent;  opacity: 1;}
+select.form-control:focus, 
+select.form-control:active, 
+select.form-control:hover 		{color: #a4a7b5;box-shadow: 0 0 0!important;}
+.ActiveGroup 					{color: #fff;}
+.StatusValue 					{color:#FFF;}
+.StatusLine 					{color:#a4a7b5;	border-bottom: 1px solid #333;}
+input[type="search"] 			{border-bottom: 1px solid #777; background-color: transparent;}
+select option 					{margin: 40px;background-color: #333543; color: #fff; text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);}
+.VehicleListIconDelayed			{color:#bb3b47;}
+.VehicleListIconError,
+.VehicleListBacklog,
+.VehicleListIconStopped,
+.VehicleListIconOk,
+.VehicleListIconOk:hover 		{color:#FF6600;}
+.SearchFilter 					{border-bottom: 1px solid #a4a7b5; background-color: transparent;color: #f6f6f6; border-left: 3px solid #FF6600;}
+.nav-tabs .nav-link 			{color : #a4a7b5;}
+.AdviseText						{color: #a4a7b5;}
+.selectize-dropdown 			{background: #333543; border-color:#A4A7B5; -webkit-border-radius: 0 0 0px 0px; -moz-border-radius: 0 0 0px 0px;  border-radius: 0 0 0px 0px;}
+.selectize-control.col-12.single {color:A4A7B5; font-size: 110%;border-bottom: 1px solid #777;}
+
+a.DealerInfo 					{color: #a4a7b5;}
+.navbar-dark .navbar-toggler 	{border: 0px solid #A4A7B5;}
+.navbar-toggler .navbar-toggler-icon { background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");}
+.loginbox 						{background:#333543;}
