@@ -31,4 +31,4 @@ $GLOBALS['config'] = array(
   'token_name' => 'token'
 )
 );
-``
+```
