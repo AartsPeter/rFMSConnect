@@ -32,3 +32,4 @@ $GLOBALS['config'] = array(
 )
 );
 ```
+As pre-requised you will need to have installed a Webserver / PHP and MySQl/MariaDB. In my environment I used XAMPP. The main location within the HTTPD file is the directory containing the rFMSConnect folder.
