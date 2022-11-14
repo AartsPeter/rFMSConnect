@@ -10,7 +10,9 @@ The application is developed in PHP and Javascript based on a version 4.3 of Use
 
 ## First step Installing the Database
 
-## Second step conencting to the database with the application
+Go to the repository of MySQL containing the SQL structure and minimal data SQL-files to load into yur database.
+
+## Second step connecting to the database with the application
 
 ```php
 $GLOBALS['config'] = array(
