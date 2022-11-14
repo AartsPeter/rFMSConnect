@@ -8,6 +8,10 @@ The POC environment consists of two main parts, the rFMS-API-ETL and the rFMSCon
 
 The application is developed in PHP and Javascript based on a version 4.3 of UserSpice(C) and uses a few basic JS-libraries like Leaflet, DataTables, HighCharts, Bootstrap, Notiflix, jQuery, SLimSelect, FontAwesome, CKEditor.
 
+## First step Installing the Database
+
+## Second step conencting to the database with the application
+
 ```php
 $GLOBALS['config'] = array(
 'mysql'      => array(
